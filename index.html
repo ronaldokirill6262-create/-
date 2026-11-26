@@ -1,0 +1,1050 @@
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Привлекайте курьеров вместе с Courier Expert. Обучение для партнёров и выплаты до 60 000 ₽ за привлечённого курьера.">
+<title>Courier Expert — партнёрская программа для рекрутеров</title>
+<style>
+:root {
+--bg: #f5f3ee;
+--surface: #ffffff;
+--surface-light: #eeeae1;
+--text: #1b263b;
+--muted: #687386;
+--green: #d45b3b;
+--green-dark: #fff0e9;
+--border: rgba(27, 38, 59, .13);
+--radius: 22px;
+--width: 1140px;
+}
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--bg);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  line-height: 1.55;
+}
+
+a { color: inherit; text-decoration: none; }
+button, input { font: inherit; }
+
+.container {
+  width: min(var(--width), calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.section { padding: 88px 0; }
+
+.section-kicker {
+  margin: 0 0 12px;
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(32px, 5vw, 54px);
+  line-height: 1.06;
+
+letter-spacing: -2px;
+}
+.section-lead {
+  max-width: 700px;
+  margin: 18px 0 0;
+  color: var(--muted);
+
+font-size: 17px;
+}
+.button {
+  display: inline-flex;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 22px;
+  border: 1px solid transparent;
+  border-radius: 13px;
+  font-weight: 800;
+  transition: transform .2s, background .2s, border-color .2s;
+}
+
+.button:hover { transform: translateY(-2px); }
+
+.button-primary {
+  color: #171b12;
+
+background: var(--green);
+}
+.button-primary:hover { background: #d7ff84; }
+
+.button-secondary {
+border-color: var(--border);
+background: rgba(255,255,255,.04);
+}
+.button-secondary:hover { border-color: rgba(255,255,255,.28); }
+
+/* Шапка */
+.header {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  border-bottom: 1px solid var(--border);
+  background: rgba(16,18,15,.88);
+  backdrop-filter: blur(14px);
+}
+
+.nav {
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+  justify-content: space-between;
+
+gap: 24px;
+}
+.logo {
+  white-space: nowrap;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: -.5px;
+}
+
+.logo span { color: var(--green); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  color: var(--muted);
+
+font-size: 14px;
+}
+.nav-links a:hover { color: var(--text); }
+
+.nav .button {
+  min-height: 44px;
+  padding: 0 17px;
+  font-size: 14px;
+}
+
+/* Первый экран */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 92px 0 66px;
+}
+
+.hero::before {
+
+position: absolute;
+z-index: -1;
+top: -180px;
+right: -130px;
+width: 650px;
+height: 650px;
+border-radius: 50%;
+background: radial-gradient(circle, rgba(175,226,88,.15), transparent 68%);
+content: "";
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 13px;
+  border: 1px solid rgba(200,243,107,.22);
+  border-radius: 999px;
+  color: var(--green);
+  background: rgba(200,243,107,.07);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 13px var(--green);
+}
+
+h1 {
+  max-width: 750px;
+  margin: 24px 0 20px;
+  font-size: clamp(44px, 7vw, 78px);
+  line-height: .98;
+  letter-spacing: -4px;
+}
+
+h1 span { color: var(--green); }
+
+.hero-text {
+  max-width: 610px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.hero-caption {
+  margin: 16px 0 0;
+  color: #838b7e;
+  font-size: 12px;
+}
+
+.reward-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 365px;
+  padding: 34px;
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background:
+
+radial-gradient(circle at 90% 5%, rgba(200,243,107,.18), transparent 38%),
+linear-gradient(145deg, #20271e, #171a16 68%);
+}
+.reward-card::after {
+  position: absolute;
+  right: 12px;
+  bottom: -90px;
+  color: rgba(200,243,107,.07);
+  content: "₽";
+  font-size: 300px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.reward-label, .reward-value, .reward-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.reward-label {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.reward-value {
+
+margin: 18px 0 13px;
+color: var(--green);
+font-size: clamp(55px, 7vw, 82px);
+font-weight: 900;
+line-height: .95;
+letter-spacing: -5px;
+}
+.reward-copy {
+  max-width: 275px;
+
+color: var(--muted);
+font-size: 15px;
+}
+.reward-chip {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  margin-top: 26px;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: rgba(0,0,0,.16);
+  font-size: 13px;
+}
+
+/* Короткие факты */
+.facts {
+  display: grid;
+
+grid-template-columns: repeat(4, 1fr);
+border-top: 1px solid var(--border);
+border-bottom: 1px solid var(--border);
+}
+.fact {
+  padding: 27px 20px;
+  border-right: 1px solid var(--border);
+}
+
+.fact:first-child { padding-left: 0; }
+.fact:last-child { border-right: 0; }
+
+.fact strong {
+  display: block;
+
+margin-bottom: 4px;
+color: var(--green);
+font-size: 23px;
+}
+.fact span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Карточки */
+.cards {
+  display: grid;
+
+grid-template-columns: repeat(3, 1fr);
+gap: 16px;
+margin-top: 38px;
+}
+.card {
+  padding: 26px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.card-icon {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+
+margin-bottom: 20px;
+border: 1px solid rgba(200,243,107,.2);
+border-radius: 14px;
+color: var(--green);
+background: rgba(200,243,107,.08);
+font-size: 21px;
+}
+.card h3 {
+  margin: 0 0 9px;
+  font-size: 19px;
+  letter-spacing: -.3px;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* О компании */
+.about-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 55px;
+  align-items: start;
+}
+
+.about-panel {
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.about-panel p {
+
+margin: 0 0 16px;
+color: var(--muted);
+}
+.about-panel p:last-child { margin-bottom: 0; }
+
+.about-highlight {
+  margin-top: 22px;
+
+padding: 16px 18px;
+border-left: 3px solid var(--green);
+border-radius: 0 12px 12px 0;
+color: var(--text);
+background: rgba(200,243,107,.07);
+}
+/* Как работает */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 38px;
+}
+
+.step {
+  min-height: 230px;
+  padding: 23px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+background: var(--surface);
+}
+.step-number {
+  display: grid;
+  width: 40px;
+  height: 40px;
+
+place-items: center;
+margin-bottom: 24px;
+border-radius: 12px;
+color: #171b12;
+background: var(--green);
+font-weight: 900;
+}
+.step h3 { margin: 0 0 9px; font-size: 18px; }
+
+.step p { margin: 0; color: var(--muted); font-size: 14px; }
+/* Обучение */
+.training {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+gap: 40px;
+align-items: center;
+padding: 42px;
+border: 1px solid var(--border);
+border-radius: 28px;
+background:
+radial-gradient(circle at 100% 0, rgba(200,243,107,.11), transparent 35%),
+var(--surface);
+}
+.training h2 {
+
+margin: 0;
+font-size: clamp(30px, 4vw, 46px);
+line-height: 1.05;
+letter-spacing: -1.5px;
+}
+.training p {
+  margin: 17px 0 0;
+  color: var(--muted);
+}
+
+.training-list {
+  display: grid;
+
+gap: 12px;
+margin: 0;
+padding: 0;
+list-style: none;
+}
+.training-list li {
+display: flex;
+gap: 12px;
+align-items: flex-start;
+padding: 14px;
+border: 1px solid var(--border);
+border-radius: 13px;
+background: rgba(0,0,0,.12);
+}
+.check {
+  color: var(--green);
+  font-weight: 900;
+}
+
+/* Калькулятор */
+.calculator {
+  display: grid;
+  grid-template-columns: 1fr .9fr;
+
+gap: 30px;
+margin-top: 36px;
+padding: 30px;
+border: 1px solid var(--border);
+border-radius: 24px;
+background: var(--surface);
+}
+.calc-controls {
+  display: grid;
+
+gap: 22px;
+}
+.field label {
+  display: block;
+  margin-bottom: 9px;
+
+font-size: 14px;
+font-weight: 750;
+}
+.field small {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.field input {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 15px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  outline: none;
+  color: var(--text);
+
+background: #11140f;
+}
+.field input:focus { border-color: var(--green); }
+
+.calc-result {
+  display: flex;
+
+flex-direction: column;
+justify-content: center;
+padding: 28px;
+border: 1px solid rgba(200,243,107,.2);
+border-radius: 18px;
+background: var(--green-dark);
+}
+.calc-result span {
+  color: #c0c9b6;
+  font-size: 14px;
+}
+
+.calc-result strong {
+
+display: block;
+margin: 9px 0;
+color: var(--green);
+font-size: clamp(38px, 5vw, 58px);
+line-height: 1;
+letter-spacing: -2px;
+}
+.calc-result p {
+  margin: 0;
+
+color: #adb7a1;
+font-size: 13px;
+}
+.fine-print {
+  margin: 15px 0 0;
+
+color: #828a7e;
+font-size: 12px;
+}
+/* FAQ */
+.faq-list {
+  display: grid;
+
+gap: 10px;
+max-width: 860px;
+margin-top: 34px;
+}
+details {
+  padding: 19px 22px;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  background: var(--surface);
+}
+
+summary {
+
+position: relative;
+padding-right: 28px;
+cursor: pointer;
+font-weight: 750;
+list-style: none;
+}
+summary::-webkit-details-marker { display: none; }
+
+summary::after {
+
+position: absolute;
+top: -2px;
+right: 0;
+color: var(--green);
+content: "+";
+font-size: 24px;
+font-weight: 500;
+}
+details[open] summary::after { content: "−"; }
+
+details p {
+  margin: 13px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Финальный CTA */
+.contact-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 40px;
+  border: 1px solid rgba(200,243,107,.24);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 100% 0, rgba(200,243,107,.13), transparent 38%),
+    var(--surface);
+}
+
+.contact-box h2 {
+  margin: 0;
+  font-size: clamp(29px, 4vw, 44px);
+  line-height: 1.05;
+
+letter-spacing: -1.5px;
+}
+.contact-box p {
+  margin: 13px 0 0;
+  color: var(--muted);
+}
+
+.footer {
+  padding: 26px 0;
+
+border-top: 1px solid var(--border);
+color: var(--muted);
+font-size: 13px;
+}
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .hero-grid, .about-grid { grid-template-columns: 1fr; }
+  .hero-grid { gap: 35px; }
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: repeat(2, 1fr); }
+  .training { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+}
+
+@media (max-width: 600px) {
+  .container { width: min(100% - 28px, var(--width)); }
+  .section { padding: 64px 0; }
+  .hero { padding: 58px 0 42px; }
+  h1 { letter-spacing: -2.5px; }
+  .hero-text { font-size: 16px; }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .button { width: 100%; }
+  .reward-card { min-height: 300px; padding: 27px; }
+  .facts { grid-template-columns: repeat(2, 1fr); }
+  .fact { padding: 19px 12px; border-bottom: 1px solid var(--border); }
+  .fact:nth-child(2) { border-right: 0; }
+  .fact:nth-child(3), .fact:nth-child(4) { border-bottom: 0; }
+  .fact:first-child { padding-left: 12px; }
+  .cards, .steps { grid-template-columns: 1fr; }
+  .step { min-height: auto; }
+  .training { padding: 25px; }
+  .calculator { grid-template-columns: 1fr; padding: 20px; }
+  .contact-box { align-items: flex-start; flex-direction: column; padding: 27px; }
+  .contact-box .button { width: 100%; }
+  .footer-row { flex-direction: column; }
+}
+
+
+.header {
+background: rgba(245, 243, 238, .9);
+}
+
+.hero::before {
+background: radial-gradient(circle, rgba(212, 91, 59, .14), transparent 68%);
+}
+
+.eyebrow {
+border-color: rgba(212, 91, 59, .24);
+background: rgba(212, 91, 59, .07);
+}
+
+.button-primary {
+color: #fff;
+}
+
+.button-primary:hover {
+background: #b9482d;
+}
+
+.button-secondary {
+background: rgba(27, 38, 59, .04);
+}
+
+.button-secondary:hover {
+
+border-color: rgba(27, 38, 59, .28);
+}
+
+.reward-card {
+background:
+radial-gradient(circle at 90% 5%, rgba(212, 91, 59, .14), transparent 38%),
+linear-gradient(145deg, #fff, #f0ede6 68%);
+}
+
+.reward-card::after {
+color: rgba(212, 91, 59, .07);
+}
+
+.reward-chip,
+.field input {
+
+background: #fff;
+}
+
+.card-icon {
+border-color: rgba(212, 91, 59, .2);
+
+background: rgba(212, 91, 59, .08);
+}
+
+.about-highlight {
+background: rgba(212, 91, 59, .07);
+}
+
+.training {
+background:
+radial-gradient(circle at 100% 0, rgba(212, 91, 59, .1), transparent 35%),
+var(--surface);
+}
+
+.training-list li {
+
+background: #faf9f6;
+}
+
+.calc-result {
+border-color: rgba(212, 91, 59, .2);
+
+}
+
+.calc-result span {
+color: #687386;
+}
+
+.calc-result p {
+color: #687386;
+}
+
+.contact-box {
+border-color: rgba(212, 91, 59, .24);
+background:
+radial-gradient(circle at 100% 0, rgba(212, 91, 59, .1), transparent 38%),
+var(--surface);
+}
+
+.fine-print {
+color: #687386;
+}
+</style>
+</head>
+<body>
+<header class="header">
+<div class="container nav">
+<a class="logo" href="#top">COURIER <span>EXPERT</span></a>
+  <nav class="nav-links" aria-label="Основная навигация">
+    <a href="#about">О программе</a>
+    <a href="#steps">Как начать</a>
+    <a href="#training">Обучение</a>
+    <a href="#faq">Вопросы</a>
+  </nav>
+
+  <a class="button button-primary" href="https://t.me/@kkk_143">
+
+Написать нам <span aria-hidden="true">↗</span>
+</a>
+</div>
+</header>
+<main id="top">
+<section class="hero">
+<div class="container hero-grid">
+<div>
+<div class="eyebrow">
+<span class="eyebrow-dot"></span>
+Партнёрская программа Courier Expert
+</div>
+      <h1>Привлекайте курьеров.<br><span>Получайте до 60 000 ₽</span></h1>
+
+      <p class="hero-text">
+
+Помогайте кандидатам найти работу курьером и участвуйте
+в партнёрской программе Courier Expert. Обучение для партнёров есть,
+а размер выплаты зависит от города.
+</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="https://t.me/@kkk_143">
+          Узнать условия в Telegram <span aria-hidden="true">↗</span>
+
+</a>
+<a class="button button-secondary" href="#steps">Как устроена программа</a>
+</div>
+      <p class="hero-caption">
+
+Условия и размер выплаты уточняются для конкретного города.
+</p>
+</div>
+<aside class="reward-card" aria-label="Информация о выплате">
+<div class="reward-label">Выплата за привлечённого курьера</div>
+<div class="reward-value">до 60 000 ₽</div>
+<div class="reward-copy">
+Точная сумма зависит от города и условий партнёрской программы.
+</div>
+<div class="reward-chip">Работаем с кандидатами по всей России</div>
+</aside>
+</div>
+</section>
+<div class="container">
+  <div class="facts">
+    <div class="fact">
+      <strong>Вся Россия</strong>
+      <span>Можно привлекать курьеров из разных городов</span>
+    </div>
+    <div class="fact">
+      <strong>До 60 000 ₽</strong>
+      <span>Максимальная выплата за курьера</span>
+    </div>
+    <div class="fact">
+      <strong>Обучение</strong>
+      <span>Помогаем разобраться в работе</span>
+    </div>
+    <div class="fact">
+      <strong>Ставка по городу</strong>
+      <span>Уточните условия для нужного региона</span>
+    </div>
+  </div>
+</div>
+
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div>
+      <p class="section-kicker">О программе</p>
+      <h2 class="section-title">Работайте с кандидатами вместе с Courier Expert</h2>
+      <p class="section-lead">
+
+Courier Expert — рекрутинговая компания. Мы привлекаем курьеров
+и предлагаем партнёрскую программу тем, кто хочет находить кандидатов.
+</p>
+</div>
+    <div class="about-panel">
+      <p>
+
+Ваша задача — помогать находить людей, которым интересна работа курьером,
+и знакомить их с возможностью присоединиться к доставке.
+</p>
+<p>
+Для партнёров предусмотрено обучение. Размер выплаты за привлечённого
+курьера зависит от города, поэтому точные условия лучше узнать до начала работы.
+</p>
+<div class="about-highlight">
+Не нашли свой город в списке? Напишите нам — уточним условия для вашего региона.
+</div>
+</div>
+</div>
+</section>
+<section class="section" style="padding-top: 0">
+  <div class="container">
+    <p class="section-kicker">Почему Courier Expert</p>
+    <h2 class="section-title">Понятные условия — до старта</h2>
+    <p class="section-lead">
+      Расскажем, как устроена программа, какое обучение доступно
+      и какая выплата действует в нужном городе.
+    </p>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card-icon">₽</div>
+        <h3>Выплата зависит от города</h3>
+
+<p>Размер выплаты может различаться. Запросите актуальные условия по своему региону.</p>
+</article>
+      <article class="card">
+        <div class="card-icon">✓</div>
+
+<h3>Есть обучение</h3>
+<p>Партнёрам доступно обучение для знакомства с программой и порядком работы.</p>
+</article>
+      <article class="card">
+        <div class="card-icon">⌖</div>
+        <h3>География — вся Россия</h3>
+        <p>Можно обсудить привлечение кандидатов из разных городов страны.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="steps">
+  <div class="container">
+    <p class="section-kicker">Как начать</p>
+    <h2 class="section-title">От первого сообщения до участия в программе</h2>
+    <p class="section-lead">
+
+Начните с разговора с командой — вам расскажут условия для вашего города.
+</p>
+    <div class="steps">
+
+<article class="step">
+<div class="step-number">01</div>
+<h3>Напишите в Telegram</h3>
+<p>Скажите, в каком городе планируете привлекать курьеров.</p>
+</article>
+      <article class="step">
+        <div class="step-number">02</div>
+        <h3>Уточните условия</h3>
+        <p>Узнайте ставку для города и порядок начисления выплаты.</p>
+      </article>
+
+      <article class="step">
+        <div class="step-number">03</div>
+        <h3>Пройдите обучение</h3>
+        <p>Познакомьтесь с партнёрской программой и необходимыми этапами работы.</p>
+      </article>
+
+      <article class="step">
+        <div class="step-number">04</div>
+        <h3>Привлекайте кандидатов</h3>
+        <p>Находите людей, которым интересна работа курьером, и следуйте условиям программы.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="training" style="padding-top: 0">
+  <div class="container">
+    <div class="training">
+      <div>
+
+<p class="section-kicker">Обучение партнёров</p>
+<h2>Разберитесь в программе до начала работы</h2>
+<p>
+Обучение включено в партнёрскую программу. Напишите нам,
+чтобы узнать, как оно проходит и какие материалы доступны.
+</p>
+<div style="margin-top: 24px">
+<a class="button button-primary" href="https://t.me/@kkk_143">
+Узнать про обучение <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+      <ul class="training-list">
+        <li><span class="check">✓</span><span>Знакомство с условиями партнёрской программы</span></li>
+        <li><span class="check">✓</span><span>Разбор порядка привлечения кандидатов</span></li>
+        <li><span class="check">✓</span><span>Ответы на вопросы по работе в вашем городе</span></li>
+      </ul>
+    </div>
+
+</div>
+</section>
+<section class="section">
+  <div class="container">
+    <p class="section-kicker">Расчёт дохода</p>
+    <h2 class="section-title">Прикиньте возможную сумму</h2>
+    <p class="section-lead">
+      Введите количество привлечённых курьеров и выплату за одного курьера
+      по условиям вашего города.
+    </p>
+
+    <div class="calculator">
+      <div class="calc-controls">
+        <div class="field">
+          <label for="couriers">Количество привлечённых курьеров</label>
+          <input id="couriers" type="number" min="1" max="1000" value="5">
+        </div>
+
+        <div class="field">
+          <label for="payout">Выплата за одного курьера, ₽</label>
+          <input id="payout" type="number" min="0" max="60000" value="0">
+          <small>Уточните ставку для вашего города у команды Courier Expert.</small>
+        </div>
+      </div>
+
+      <div class="calc-result">
+        <span>Примерная сумма по введённым значениям</span>
+        <strong id="total">0 ₽</strong>
+
+<p>Это арифметический расчёт, а не гарантия дохода или подтверждение начисления выплаты.</p>
+</div>
+</div>
+    <p class="fine-print">
+      Выплата зависит от города и условий программы. Максимальная сумма — до 60 000 ₽
+      за привлечённого курьера. Перед участием уточните актуальные критерии и порядок начисления.
+    </p>
+
+</div>
+</section>
+<section class="section" id="faq">
+  <div class="container">
+
+<p class="section-kicker">FAQ</p>
+<h2 class="section-title">Частые вопросы</h2>
+    <div class="faq-list">
+      <details>
+        <summary>В каких городах можно участвовать?</summary>
+        <p>Программа рассчитана на привлечение курьеров по всей России. Условия выплаты зависят от города.</p>
+      </details>
+
+      <details>
+        <summary>Сколько можно получить за одного курьера?</summary>
+        <p>Выплата может составлять до 60 000 ₽. Точную сумму для конкретного города уточните у команды Courier Expert.</p>
+      </details>
+
+      <details>
+        <summary>Есть ли обучение?</summary>
+        <p>Да, для партнёров предусмотрено обучение. Напишите нам, чтобы узнать его содержание и порядок прохождения.</p>
+      </details>
+
+      <details>
+        <summary>Когда и по каким условиям начисляется выплата?</summary>
+        <p>Порядок и критерии начисления зависят от условий программы. Уточните их перед началом работы.</p>
+      </details>
+
+      <details>
+        <summary>Как узнать условия для моего города?</summary>
+        <p>Напишите нам в Telegram и укажите город, который вас интересует.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0">
+  <div class="container">
+
+<div class="contact-box">
+<div>
+<p class="section-kicker">Связаться с нами</p>
+<h2>Узнайте условия для своего города</h2>
+<p>Напишите в Telegram — расскажем о программе и обучении.</p>
+</div>
+<a class="button button-primary" href="https://t.me/@kkk_143">
+Написать в Telegram <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="container footer-row">
+<div><strong>COURIER EXPERT</strong> — партнёрская программа по привлечению курьеров</div>
+<div>Выплата до 60 000 ₽ зависит от города и условий программы.</div>
+</div>
+</footer>
+<script>
+const couriersInput = document.getElementById("couriers");
+const payoutInput = document.getElementById("payout");
+const totalOutput = document.getElementById("total");
+function updateTotal() {
+  const couriers = Math.max(0, Number(couriersInput.value) || 0);
+  const payout = Math.max(0, Number(payoutInput.value) || 0);
+  const total = couriers * payout;
+
+  totalOutput.textContent = new Intl.NumberFormat("ru-RU").format(total) + " ₽";
+}
+
+couriersInput.addEventListener("input", updateTotal);
+payoutInput.addEventListener("input", updateTotal);
+updateTotal();
+</script>
+</body>
+</html>
+
+
